@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website game terbaik dengan informasi tentang rilis terbaru, genre, dan modifikasi game.">
+    <meta name="keywords" content="game, modifikasi, genre, rilis game, website game">
+    <title>My Game Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Game Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Language</a></li>
+                <li><a href="#">OS</a></li>
+                <li><a href="#">Mod</a></li>
+                <li><a href="#">Genre</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="search-section">
+        <input type="text" placeholder="Search...">
+    </section>
+    
+    <section class="game-cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Game Image">
+            <h2>Game Title 1</h2>
+            <p>Release Date: September 2024</p>
+            <a href="game-detail1.html" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Game Image">
+            <h2>Game Title 2</h2>
+            <p>Release Date: September 2024</p>
+            <a href="game-detail2.html" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Game Image">
+            <h2>Game Title 3</h2>
+            <p>Release Date: September 2024</p>
+            <a href="game-detail3.html" class="read-more">Read More</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Game Website | All rights reserved</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.querySelector('input[type="text"]');
+        const cards = document.querySelectorAll('.card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
